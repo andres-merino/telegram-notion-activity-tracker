@@ -1,49 +1,49 @@
 {
-  "proyectos": {
+  "Proyectos": {
     "nombre": "Diseño, seguimiento y evaluación de proyectos de carreras y programas",
     "descripcion": "Actividades relacionadas con la planificación, monitoreo y evaluación de proyectos académicos vinculados a carreras y programas de la Facultad."
   },
-  "internacionalizacion": {
+  "Internacionalizacion": {
     "nombre": "Internacionalización curricular y movilidad docente",
     "descripcion": "Acciones orientadas a fortalecer la dimensión internacional del currículo y promover la movilidad académica docente."
   },
-  "recursos": {
+  "Recursos": {
     "nombre": "Optimización de los recursos didácticos y de la información para el aprendizaje",
     "descripcion": "Gestión y mejora de materiales didácticos, repositorios académicos y recursos de información para apoyar el proceso de enseñanza-aprendizaje."
   },
-  "rda": {
+  "RdA": {
     "nombre": "Medición de los resultados de aprendizaje",
     "descripcion": "Diseño, aplicación y análisis de instrumentos y estrategias para evaluar el logro de los resultados de aprendizaje."
   },
-  "areas": {
+  "Áreas": {
     "nombre": "Organización de áreas curriculares",
     "descripcion": "Estructuración, articulación y coordinación de áreas académicas dentro de las carreras y programas."
   },
-  "evaluacion_docente": {
+  "Evaluacion docente": {
     "nombre": "Elaboración de la matriz de evaluación docente",
     "descripcion": "Diseño y actualización de instrumentos y criterios para la evaluación del desempeño docente."
   },
-  "capacitacion": {
+  "Capacitacion": {
     "nombre": "Compilación y seguimiento de necesidades de capacitación",
     "descripcion": "Identificación, registro y seguimiento de requerimientos formativos del personal académico."
   },
-  "titulacion_practicas": {
+  "Titulacion-Practicas": {
     "nombre": "Facilitación y seguimiento a procesos de titulación y prácticas pre-profesionales",
     "descripcion": "Gestión y acompañamiento de los procesos de titulación y prácticas pre-profesionales de los estudiantes."
   },
-  "programacion": {
+  "Programacion": {
     "nombre": "Optimización de la programación académica de la Facultad",
     "descripcion": "Planificación, ajuste y mejora de la programación académica para optimizar recursos y cobertura docente."
   },
-  "calidad": {
+  "Calidad": {
     "nombre": "Supervisión y cumplimiento de estándares de calidad",
     "descripcion": "Seguimiento y verificación del cumplimiento de estándares institucionales y de aseguramiento de la calidad."
   },
-  "aulas_virtuales": {
+  "Aulas virtuales": {
     "nombre": "Supervisión de uso y actualización de aulas virtuales",
     "descripcion": "Monitoreo del uso adecuado y actualización de contenidos en aulas virtuales y plataformas educativas."
   },
-  "otras": {
+  "Otras": {
     "nombre": "Otras actividades",
     "descripcion": "Actividades diversas que no encajan en lo más mínimo en las categorías anteriores pero que son relevantes para el seguimiento académico."
   }

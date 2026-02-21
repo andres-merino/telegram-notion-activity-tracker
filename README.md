@@ -56,7 +56,6 @@ La información registrada en Notion incluye:
 
 - `activity_tracker.ipynb`: Notebook interactivo para pruebas.
 - `bot_uploader.py`:  Bot de Telegram para recibir mensajes y audios con el registro de actividades.
-- `pipeline.py`:  Flujo completo: recepción → transcripción → clasificación → estructuración → envío a Notion.
 - `classifier.py`:  Lógica de clasificación de actividades basada en IA y taxonomía definida.
 - `transcriber.py`:  Transcripción de mensajes de voz a texto.
 - `categories.json`:  Definición de categorías para clasificación de actividades.

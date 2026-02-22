@@ -1,0 +1,28 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SERVER_APP_SSH_KEY }}
+
+      - name: Deploy to Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_APP_USER }}@${{ secrets.SERVER_APP }} -p ${{ secrets.SERVER_APP_PORT }} << 'EOF'
+            cd /srv/servicios/telegram-notion-activity-tracker
+            git pull origin main
+            venv-telegram-notion-activity-tracker/bin/python3 -m pip install requirements.txt
+            sudo systemctl restart telegram-notion-activity.service
+          EOF

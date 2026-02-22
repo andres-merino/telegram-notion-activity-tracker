@@ -1,7 +1,7 @@
 {
-  "Proyectos": {
-    "nombre": "Diseño, seguimiento y evaluación de proyectos de carreras y programas",
-    "descripcion": "Actividades relacionadas con la planificación, monitoreo y evaluación de proyectos académicos vinculados a carreras y programas de la Facultad, incluyendo generación de lineamientos generales."
+  "Carreras-Programas": {
+    "nombre": "Diseño, seguimiento y evaluación de carreras y programas",
+    "descripcion": "Actividades relacionadas con la planificación, monitoreo y evaluación de las carreras y programas de la Facultad, incluyendo generación de lineamientos generales."
   },
   "Internacionalizacion": {
     "nombre": "Internacionalización curricular y movilidad docente",

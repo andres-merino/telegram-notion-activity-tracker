@@ -2,9 +2,12 @@ import os
 import telebot
 from datetime import datetime
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from classifier import classify_activity, categories
 from transcriber import transcribe_audio
-from notion_client import enviar_a_notion
+from notion_send import enviar_a_notion
 
 
 USUARIO_AUTORIZADO = int(os.getenv("USUARIO_AUTORIZADO")) if os.getenv("USUARIO_AUTORIZADO") else None

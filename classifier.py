@@ -22,7 +22,11 @@ class Activity(BaseModel):
     category: str
 
 
-def classify_activity(texto: str, categories: dict, today: str) -> Activity:
+class ActivityBatch(BaseModel):
+    activities: list[Activity] = Field(description="Lista de actividades detectadas. Puede contener una o más actividades.")
+
+
+def classify_activities(texto: str, categories: dict, today: str) -> list[Activity]:
     allowed = list(categories.keys())
 
     system_prompt = (
@@ -38,11 +42,12 @@ def classify_activity(texto: str, categories: dict, today: str) -> Activity:
         "No inventes información; si algo no está explícito, manténlo general."
     )
     user_prompt = (
-        "1) Elige EXACTAMENTE una categoría de la lista permitida.\n"
-        "2) Genera un nombre corto y simple pero que capture lo que se hace (3–8 palabras).\n"
-        "3) Redacta una descripción breve (1 frases).\n"
-        f"4) Si no hay fecha explícita, usa la de hoy que es {today} (formato AAAA-MM-DD).\n"
-        "5) Devuelve solo el objeto del esquema.\n\n"
+        "1) Detecta si el texto contiene una o varias actividades.\n"
+        "2) Para cada actividad, elige EXACTAMENTE una categoría de la lista permitida.\n"
+        "3) Para cada actividad, genera un nombre corto y simple pero que capture lo que se hace (3–8 palabras).\n"
+        "4) Para cada actividad, redacta una descripción breve (1 frases).\n"
+        f"5) Si no hay fecha explícita, usa la de hoy que es {today} (formato AAAA-MM-DD).\n"
+        "6) Devuelve solo el objeto del esquema con 'activities' como lista. Si hay una sola actividad, igual devuélvela en la lista.\n\n"
         f"Categorías permitidas: {allowed}\n\n"
         f"Descripción de las categorías:\n" + "\n".join([f"- {key}: {value['descripcion']}" for key, value in categories.items()]) + "\n"
         "No inventes categorías. Si ninguna aplica, elige la más cercana evita lo máximo en usar la categoría Otras.\n\n"
@@ -54,7 +59,10 @@ def classify_activity(texto: str, categories: dict, today: str) -> Activity:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        text_format=Activity,
+        text_format=ActivityBatch,
         temperature=0,
     )
-    return response.output_parsed
+    parsed = response.output_parsed
+    if not parsed or not parsed.activities:
+        raise ValueError("No se detectaron actividades válidas en la respuesta del modelo.")
+    return parsed.activities

@@ -1,4 +1,3 @@
-from pydantic import BaseModel, Field
 import os
 from classifier import Activity
 from notion_client import Client as NotionClient
@@ -23,3 +22,21 @@ def enviar_a_notion(actividad: Activity):
         return {"ok": False, "error": str(e)}
 
     return {"ok": True}
+
+
+def enviar_varias_a_notion(actividades: list[Activity]):
+    resultados = []
+    errores = []
+
+    for actividad in actividades:
+        resultado = enviar_a_notion(actividad)
+        resultados.append(resultado)
+        if not resultado.get("ok"):
+            errores.append({"activity": actividad.name, "error": resultado.get("error", "Error desconocido")})
+
+    return {
+        "ok": len(errores) == 0,
+        "total": len(actividades),
+        "guardadas": len(actividades) - len(errores),
+        "errores": errores,
+    }

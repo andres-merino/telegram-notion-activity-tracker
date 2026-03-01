@@ -5,9 +5,9 @@ from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
-from classifier import classify_activity, categories
+from classifier import classify_activities, categories
 from transcriber import transcribe_audio
-from notion_send import enviar_a_notion
+from notion_send import enviar_varias_a_notion
 
 
 USUARIO_AUTORIZADO = int(os.getenv("USUARIO_AUTORIZADO")) if os.getenv("USUARIO_AUTORIZADO") else None
@@ -51,19 +51,21 @@ def handle_text(message):
     bot.send_message(message.chat.id, "📌 Registrando actividad...")
 
     try:
-        activity = classify_activity(
+        activities = classify_activities(
             texto=texto,
             categories=categories,
             today=_fecha_hoy()
         )
-        result = enviar_a_notion(activity)
+        result = enviar_varias_a_notion(activities)
         if result.get("ok"):
-            bot.send_message(
-                message.chat.id,
-                "✅ Actividad registrada en Notion.\n"
-                f"📌 Nombre: {activity.name}\n"
-                f"📌 Categoría: {activity.category}\n"
-            )
+            bot.send_message(message.chat.id, f"✅ {result.get('guardadas', 0)} de {result.get('total', 0)} actividades registradas en Notion.")
+            for activity in activities:
+                bot.send_message(
+                    message.chat.id,
+                    "✅ Actividad registrada en Notion: \n"
+                    f"📌 Nombre: {activity.name}\n"
+                    f"📌 Categoría: {activity.category}\n"
+                )
         else:
             bot.send_message(message.chat.id, f"⚠️ No se pudo registrar: {result.get('error', 'Error desconocido')}")
     except Exception as e:
@@ -87,19 +89,24 @@ def handle_voice(message):
         texto = transcribe_audio(
             audio_path=ruta_audio
         )
-        activity = classify_activity(
+        activities = classify_activities(
             texto=texto,
             categories=categories,
             today=_fecha_hoy()
         )
-        result = enviar_a_notion(activity)
+        result = enviar_varias_a_notion(activities)
         if result.get("ok"):
             bot.send_message(
                 message.chat.id,
-                "✅ Actividad registrada en Notion.\n"
-                f"📌 Nombre: {activity.name}\n"
-                f"📌 Categoría: {activity.category}\n"
+                f"✅ {result.get('guardadas', 0)} de {result.get('total', 0)} actividades registradas en Notion."
             )
+            for activity in activities:
+                bot.send_message(
+                    message.chat.id,
+                    "✅ Actividad registrada en Notion: \n"
+                    f"📌 Nombre: {activity.name}\n"
+                    f"📌 Categoría: {activity.category}\n"
+                )
         else:
             bot.send_message(message.chat.id, f"⚠️ No se pudo registrar: {result.get('error', 'Error desconocido')}")
     except Exception as e:

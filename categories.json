@@ -1,50 +1,62 @@
 {
   "Carreras-Programas": {
     "nombre": "Diseño, seguimiento y evaluación de carreras y programas",
-    "descripcion": "Actividades relacionadas con la planificación, monitoreo y evaluación de las carreras y programas de la Facultad, incluyendo generación de lineamientos generales."
+    "descripcion": "Actividades relacionadas con sílabos, carreras, programas, maestrías o contratación docente general vinculada al funcionamiento académico global de la Facultad.",
+    "usar_cuando": "Usar cuando la actividad trate sobre revisión de sílabos, planificación de carreras o programas, reuniones de maestrías o procesos de contratación docente a nivel general."
   },
   "Internacionalizacion": {
     "nombre": "Internacionalización curricular y movilidad docente",
-    "descripcion": "Acciones orientadas a fortalecer la dimensión internacional del currículo y promover la movilidad académica docente."
+    "descripcion": "Acciones relacionadas explícitamente con internacionalización curricular, cooperación internacional o movilidad docente.",
+    "usar_cuando": "Usar cuando la actividad mencione claramente movilidad docente, cooperación internacional o internacionalización del currículo."
   },
   "Recursos": {
-    "nombre": "Optimización de los recursos didácticos y de la información para el aprendizaje",
-    "descripcion": "Gestión y mejora de materiales didácticos, repositorios académicos y recursos de información para apoyar el proceso de enseñanza-aprendizaje."
+    "nombre": "Gestión de recursos académicos y logísticos",
+    "descripcion": "Actividades relacionadas con presupuesto, logística, traspaso de información, metodologías organizativas, espacios físicos o apoyo operativo a procesos académicos.",
+    "usar_cuando": "Usar cuando la actividad trate sobre presupuesto, organización logística, gestión de información, espacios físicos o metodologías de traspaso de información."
   },
   "RdA": {
-    "nombre": "Medición de los resultados de aprendizaje",
-    "descripcion": "Diseño, aplicación y análisis de instrumentos y estrategias para evaluar el logro de los resultados de aprendizaje, incluye rutas académicas y lo realcionado al seguimiento de notas y calificaciones."
+    "nombre": "Gestión de resultados de aprendizaje y seguimiento académico",
+    "descripcion": "Actividades relacionadas con rutas académicas, calificaciones, recuperación académica, aprobación de RdA y gestiones asociadas al rendimiento estudiantil.",
+    "usar_cuando": "Usar cuando la actividad trate sobre notas, calificaciones, rutas académicas, recuperación de RdA o procesos de aprobación académica de estudiantes."
   },
   "Áreas": {
-    "nombre": "Organización de áreas curriculares",
-    "descripcion": "Estructuración, articulación y coordinación de áreas académicas dentro de las carreras y programas."
+    "nombre": "Coordinación de asignaturas y áreas curriculares",
+    "descripcion": "Actividades relacionadas con la coordinación académica de asignaturas, componentes curriculares o áreas de conocimiento.",
+    "usar_cuando": "Usar cuando la actividad trate sobre reuniones o coordinación de asignaturas, componentes prácticos o articulación entre docentes de una materia o área."
   },
   "Evaluacion docente": {
-    "nombre": "Elaboración de la matriz de evaluación docente",
-    "descripcion": "Monitoreo del proceso de la evaluación del desempeño docente incluyendo su retroalimentación."
+    "nombre": "Evaluación y retroalimentación docente",
+    "descripcion": "Actividades relacionadas con la evaluación del desempeño docente y procesos de retroalimentación.",
+    "usar_cuando": "Usar cuando la actividad trate explícitamente sobre evaluación docente o retroalimentación del desempeño."
   },
   "Capacitacion": {
-    "nombre": "Compilación y seguimiento de necesidades de capacitación",
-    "descripcion": "Identificación, registro y seguimiento de requerimientos formativos del personal académico."
+    "nombre": "Capacitación y desarrollo docente",
+    "descripcion": "Actividades relacionadas con formación, talleres, charlas o desarrollo de capacidades del personal académico.",
+    "usar_cuando": "Usar cuando la actividad trate sobre organización o ejecución de charlas, talleres o procesos de capacitación docente."
   },
   "Titulacion-Practicas": {
-    "nombre": "Facilitación y seguimiento a procesos de titulación y prácticas pre-profesionales",
-    "descripcion": "Gestión y acompañamiento de los procesos de titulación y prácticas pre-profesionales de los estudiantes así como la generación de lineamientos para este punto."
+    "nombre": "Gestión de titulación y prácticas preprofesionales",
+    "descripcion": "Actividades relacionadas con procesos de titulación, integración curricular, seminarios de titulación o prácticas preprofesionales.",
+    "usar_cuando": "Usar cuando la actividad trate sobre seminario de titulación, integración curricular, asignación de estudiantes en titulación o prácticas."
   },
   "Programacion": {
-    "nombre": "Optimización de la programación académica de la Facultad",
-    "descripcion": "Planificación, ajuste y mejora de la programación académica (horarios, asignación docente) para optimizar recursos y cobertura docente."
+    "nombre": "Programación académica",
+    "descripcion": "Actividades relacionadas con la planificación operativa de la oferta académica, asignación docente y distribución de estudiantes.",
+    "usar_cuando": "Usar cuando la actividad trate sobre horarios, asignación de docentes, inscripción, matrícula, cambios de paralelos o distribución de estudiantes."
   },
   "Calidad": {
-    "nombre": "Supervisión y cumplimiento de estándares de calidad",
-    "descripcion": "Seguimiento y verificación del cumplimiento de estándares institucionales y de aseguramiento de la calidad."
+    "nombre": "Aseguramiento de la calidad",
+    "descripcion": "Actividades relacionadas con el cumplimiento de estándares institucionales y procesos de calidad académica.",
+    "usar_cuando": "Usar solo cuando la actividad mencione explícitamente estándares de calidad o procesos formales de aseguramiento de la calidad."
   },
   "Aulas virtuales": {
-    "nombre": "Supervisión de uso y actualización de aulas virtuales",
-    "descripcion": "Monitoreo del uso adecuado y actualización de contenidos en aulas virtuales y plataformas educativas y su seguimiento."
+    "nombre": "Gestión de aulas virtuales",
+    "descripcion": "Actividades relacionadas con el uso, seguimiento y actualización de plataformas educativas.",
+    "usar_cuando": "Usar solo cuando la actividad trate sobre EVA, aulas virtuales o gestión de contenidos en plataformas educativas."
   },
   "Otras": {
     "nombre": "Otras actividades",
-    "descripcion": "Actividades diversas que no encajan en lo más mínimo en las categorías anteriores pero que son relevantes para el seguimiento académico."
+    "descripcion": "Actividades que no encajan de forma razonable en las categorías anteriores.",
+    "usar_cuando": "Usar únicamente cuando ninguna de las categorías anteriores aplique de manera clara."
   }
 }

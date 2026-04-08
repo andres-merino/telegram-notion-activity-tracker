@@ -24,5 +24,5 @@ jobs:
             cd /srv/servicios/telegram-notion-activity-tracker
             git pull origin main
             venv-telegram-notion-activity-tracker/bin/python3 -m pip install requirements.txt
-            sudo systemctl restart telegram-notion-activity.service
+            sudo systemctl restart telegram-notion-activity-tracker.service
           EOF
